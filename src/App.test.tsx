@@ -1,9 +1,12 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("check App renders", () => {
+  test("Main heading renders", () => {
+    render(<App />);
+    const headingElement = screen.getByRole("heading", {
+      name: /Delivery Fee Calculator/,
+    });
+    expect(headingElement).toBeInTheDocument();
+  });
 });
